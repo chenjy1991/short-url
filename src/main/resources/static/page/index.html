@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Short Url</title>
 </head>
-<body>
-helloworld
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<body bgcolor="#000000" style="width: 100%">
+<div style="width: 100%;height: 200px;margin: 200px auto;text-align:center;position: fixed">
+    <div>
+        <input id="txt-longUrl" type="text" style="height: 40px; width: 400px; font-size: 16px;"/>
+    </div>
+    <div style="padding-top: 10px;padding-bottom: 10px">
+        <button id="btn-generate" style="margin: 0 0 0 0;padding: 0 0 0 0;height: 40px;width: 100px;">点击生成短连接</button>
+    </div>
+    <div style="margin-top: 0px;">
+        <input id="txt-shortUrl" type="text" style="height: 40px; width: 400px; font-size: 16px;" readonly/>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#btn-generate").bind("click",function(){
+        var longUrl = $("#txt-longUrl").val();
+        var params = {"url":longUrl,"key":"u.apitest.link"};
+        $.ajax({
+            type: "POST",
+            url: "http://u.apitest.link/generateShort",
+            data:JSON.stringify(params),
+            contentType : "application/json",
+            dataType: "json",
+            success:function (message) {
+                if (message&&message.code===200){
+                    $("#txt-shortUrl").attr("value",message.data);
+                }else {
+                    $("#txt-shortUrl").attr("value","转换失败："+message.msg);
+                }
+            },
+            error:function (message) {
+                alert("提交失败"+JSON.stringify(message));
+            }
+        });
+    });
+
+</script>
 </body>
+
+
 </html>

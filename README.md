@@ -49,7 +49,7 @@ result example:
 ````
 
 #### 其他信息
-您可以直接使用[http://u.apitest.link/generateShort](http://u.apitest.link/generateShort)来请求您的短连接，但这里并不保证能长久使用。
+您可以直接使用 [u.apitest.link](http://u.apitest.link/index.html) 来请求您的短连接，但这里并不保证能长久使用。
 
 该服务器资源目前的到期时间为`2020-10-28`,部署于[腾讯云](https://cloud.tencent.com/act/double11/reserve?spread_hash_key=oNHy0e "双十一优惠")北京节点。
 
