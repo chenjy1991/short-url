@@ -52,3 +52,5 @@ result example:
 您可以直接使用[http://u.apitest.link/generateShort](http://u.apitest.link/generateShort)来请求您的短连接，但这里并不保证能长久使用。
 
 该服务器资源目前的到期时间为`2020-10-28`,部署于[腾讯云](https://cloud.tencent.com/act/double11/reserve?spread_hash_key=oNHy0e)北京节点。
+
+在此服务器资源到期前，您的短连接内容将可以长久使用。
