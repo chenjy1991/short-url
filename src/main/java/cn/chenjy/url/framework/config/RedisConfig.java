@@ -34,7 +34,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig().serializeValuesWith(pair);
         defaultCacheConfig = defaultCacheConfig.entryTtl(Duration.ofSeconds(100));//设置过期时间
         RedisCacheManager cacheManager = new RedisCacheManager(redisCacheWriter, defaultCacheConfig);
-        ParserConfig.getGlobalInstance().addAccept("com.nbmssoft.");
+        ParserConfig.getGlobalInstance().addAccept("cn.chenjy.url.");
         return cacheManager;
     }
 
